@@ -1,5 +1,5 @@
 {
-    "paint": [
+    "paints": [
         {
             "id": 1,
             "color": "Silver",
@@ -21,7 +21,7 @@
             "price": 9500
         }
     ],
-    "interior": [
+    "interiors": [
         {
             "id": 1,
             "type": "Beige Fabric",
@@ -43,7 +43,7 @@
             "price": 8000
         }
     ],
-    "technology": [
+    "technologies": [
         {
             "id": 1,
             "package": "Basic Package",
