@@ -23,7 +23,7 @@ export const wheelOptions = async () => {
         (wheel) => {
             return `<div>
                 <select id="wheel-options">
-                    <option value="0">Select your wheels</option>
+                    <option value="0">Select a wheel style</option>
                     <option value="${wheel.id}"> ${wheel.option}</option>
                 </select>
             </div>`

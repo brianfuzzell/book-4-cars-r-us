@@ -22,7 +22,7 @@ export const interiorOptions = async () => {
         (interior) => {
             return `<div>
                 <select id="interior-options">
-                    <option value="0">Select your interior</option>
+                    <option value="0">Select an interior material</option>
                     <option value="${interior.id}"> ${interior.type}</option>
                 </select>
             </div>`

@@ -22,7 +22,7 @@ export const technologyOptions = async () => {
         (technology) => {
             return `<div>
                 <select id="technology-options">
-                    <option value="0">Select your technology package</option>
+                    <option value="0">Select a technology package</option>
                     <option value="${technology.id}"> ${technology.package}</option>
                 </select>
             </div>`

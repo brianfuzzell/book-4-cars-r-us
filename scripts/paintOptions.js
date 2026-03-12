@@ -22,7 +22,7 @@ export const paintOptions = async () => {
         (paint) => {
             return `<div>
                 <select id="paint-options">
-                    <option value="0">Select your paint color</option>
+                    <option value="0">Select a paint color</option>
                     <option value="${paint.id}"> ${paint.color}</option>
                 </select>
             </div>`
