@@ -1,10 +1,9 @@
-// import from transientState.js
+import { setWheelChoice } from "./transientState.js"
 
 // Set up change handler
 const handleWheelSelection = (changeEvent) => {
     if (changeEvent.target.id === "wheel-options") {
-        const chosenOption = changeEvent.target.value
-        console.log(parseInt(chosenOption))
+        setWheelChoice(parseInt(changeEvent.target.value))
     }
 }
 

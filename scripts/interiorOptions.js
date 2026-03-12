@@ -1,9 +1,8 @@
-// import from transientState.js
+import { setInteriorChoice } from "./transientState.js"
 
 const handleInteriorSelection = (changeEvent) => {
     if (changeEvent.target.id === "interior-options") {
-        const chosenOption = changeEvent.target.value
-        console.log(parseInt(chosenOption))
+        setInteriorChoice(parseInt(changeEvent.target.value))
     }
 }
 

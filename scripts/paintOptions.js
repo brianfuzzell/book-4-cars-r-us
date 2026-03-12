@@ -1,9 +1,8 @@
-// import from transientState.js
+import { setPaintChoice } from "./transientState.js"
 
 const handlePaintSelection = (changeEvent) => {
     if (changeEvent.target.id === "paint-options") {
-        const chosenOption = changeEvent.target.value
-        console.log(parseInt(chosenOption))
+        setPaintChoice(parseInt(changeEvent.target.value))
     }
 }
 
