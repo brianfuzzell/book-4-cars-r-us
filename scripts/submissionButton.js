@@ -2,7 +2,7 @@ import { placeOrder } from "./transientState.js"
 
 const handleOrderSubmission = (clickEvent) => {
     if (clickEvent.target.id === "submission-button") {
-        console.log("Place Car Order button clicked")
+        // console.log("Place Car Order button clicked")
         placeOrder()
     }
 }

@@ -15,7 +15,7 @@ export const ordersList = async () => {
 
             return `
                 <section class="order-submission-container">
-                    <p>${order.paint} car with ${order.wheel} wheels, ${order.interior} interior, and the ${order.technology} for a total cost of $${orderPrice}</p>
+                    <p>${order.paint.color} car with ${order.wheel.option} wheels, ${order.interior.type} interior, and the ${order.technology.package} for a total cost of $${orderPrice}</p>
                 </section>
             `
         }

@@ -43,6 +43,6 @@ export const placeOrder = async () => {
     const response = await fetch("http://localhost:8088/orders", postOptions)
 
     // Dispatch a custom event when the submission is complete
+    const stateChanged = new CustomEvent("newOrderSubmitted")
+    document.dispatchEvent(stateChanged)
 }
-
-    

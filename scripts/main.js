@@ -49,5 +49,10 @@ const render = async () => {
 }
 
 // Add an event listener for our new custom event
+// The DOM will re-render to reflect the new changes - new form submissions
+document.addEventListener("newOrderSubmitted", CustomEvent => {
+    // console.log("Data state changed. Regenerating HTML now.")
+    render()
+})
 
 render()
