@@ -12,10 +12,15 @@ export const ordersList = async () => {
     const ordersHTML = orders.map(
         (order) => {
             const orderPrice = order.paint.price + order.interior.price + order.technology.price + order.wheel.price
+            // Trying out the toLocalString() method to format the order price
+            const formattedPrice = orderPrice.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD"
+            })
 
             return `
                 <section class="order-submission-container">
-                    <p>${order.paint.color} car with ${order.wheel.option} wheels, ${order.interior.type} interior, and the ${order.technology.package} for a total cost of $${orderPrice}</p>
+                    <p>${order.paint.color} car with ${order.wheel.option} wheels, ${order.interior.type} interior, and the ${order.technology.package} for a total cost of ${formattedPrice}</p>
                 </section>
             `
         }
