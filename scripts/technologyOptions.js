@@ -8,29 +8,30 @@ const handleTechnologySelection = (changeEvent) => {
 
 export const technologyOptions = async () => {
     // Fetch technologies from the API
+    const response = await fetch("http://localhost:8088/technologies")
+    const technologies = await response.json()
 
     // console.log(technologies)
 
     // Add an event listener
     document.addEventListener("change", handleTechnologySelection)
 
-    let optionsHTML = ""
+    let optionsHTML = "<h2>Technology</h2>"
+
+    optionsHTML += '<select id="technology-options">'
+    optionsHTML += '<option value="0">Select a technology package</option>'
 
     // Generate a new array of HTML strings using the Array.map() method
-    const divStringArray = technologies.map(
+    const arrayOfOptions = technologies.map(
         (technology) => {
-            return `<div>
-                <select id="technology-options">
-                    <option value="0">Select a technology package</option>
-                    <option value="${technology.id}"> ${technology.package}</option>
-                </select>
-            </div>`
+            return `<option value="${technology.id}"> ${technology.package}</option>`
         }
     )
 
-    // console.log(divStringArray)
+    // console.log(arrayOfOptions)
 
-    optionsHTML += divStringArray.join("")
+    optionsHTML += arrayOfOptions.join("")
+    optionsHTML += "</select>"
 
     return optionsHTML
 }

@@ -20,22 +20,18 @@ const render = async () => {
 
         <article class="choices">
             <section class="options">
-                <h2>Paint</h2>
                 ${paintOptionsHTML}
             </section>
 
             <section class="options">
-                <h2>Interior</h2>
                 ${interiorOptionsHTML}
             </section>
 
             <section class="options">
-                <h2>Wheels</h2>
                 ${wheelOptionsHTML}
             </section>
 
             <section class="options">
-                <h2>Technology</h2>
                 ${technologyOptionsHTML}
             </section>
         </article>

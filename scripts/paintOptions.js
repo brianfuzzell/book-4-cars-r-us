@@ -8,29 +8,30 @@ const handlePaintSelection = (changeEvent) => {
 
 export const paintOptions = async () => {
     // Fetch paints from the API
+    const response = await fetch("http://localhost:8088/paints")
+    const paints = await response.json()
 
     // console.log(paints)
 
     // Add an event listener
     document.addEventListener("change", handlePaintSelection)
 
-    let optionsHTML = ""
+    let optionsHTML = "<h2>Paint</h2>"
+
+    optionsHTML += '<select id="paint-options">'
+    optionsHTML += '<option value="0">Select a paint color</option>'
 
     // Generate a new array of HTML strings using the Array.map() method
-    const divStringArray = paints.map(
+    const arrayOfOptions = paints.map(
         (paint) => {
-            return `<div>
-                <select id="paint-options">
-                    <option value="0">Select a paint color</option>
-                    <option value="${paint.id}"> ${paint.color}</option>
-                </select>
-            </div>`
+            return `<option value="${paint.id}"> ${paint.color}</option>`
         }
     )
 
-    // console.log(divStringArray)
+    // console.log(arrayOfOptions)
 
-    optionsHTML += divStringArray.join("")
+    optionsHTML += arrayOfOptions.join("")
+    optionsHTML += "</select>"
 
     return optionsHTML
 }

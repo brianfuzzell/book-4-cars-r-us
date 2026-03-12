@@ -8,29 +8,30 @@ const handleInteriorSelection = (changeEvent) => {
 
 export const interiorOptions = async () => {
     // Fetch interiors from the API
+    const response = await fetch("http://localhost:8088/interiors")
+    const interiors = await response.json()
 
     // console.log(interiors)
 
     // Add an event listener
     document.addEventListener("change", handleInteriorSelection)
 
-    let optionsHTML = ""
+    let optionsHTML = "<h2>Interior</h2>"
+
+    optionsHTML += '<select id="interior-options">'
+    optionsHTML += '<option value="0">Select an interior material</option>'
 
     // Generate a new array of HTML strings using the Array.map() method 
-    const divStringArray = interiors.map(
+    const arrayOfOptions = interiors.map(
         (interior) => {
-            return `<div>
-                <select id="interior-options">
-                    <option value="0">Select an interior material</option>
-                    <option value="${interior.id}"> ${interior.type}</option>
-                </select>
-            </div>`
+            return `<option value="${interior.id}"> ${interior.type}</option>`
         }
     )  
     
-    // console.log(divStringArray)
+    // console.log(arrayOfOptions)
 
-    optionsHTML += divStringArray.join("")
+    optionsHTML += arrayOfOptions.join("")
+    optionsHTML += "</select>"
 
     return optionsHTML
 }

@@ -9,29 +9,30 @@ const handleWheelSelection = (changeEvent) => {
 
 export const wheelOptions = async () => {
     // Fetch wheels from the API
+    const response = await fetch("http://localhost:8088/wheels")
+    const wheels = await response.json()
 
     // console.log(wheels)
 
     // Add an event listener
     document.addEventListener("change", handleWheelSelection)
 
-    let optionsHTML = ""
+    let optionsHTML = "<h2>Wheels</h2>"
+
+    optionsHTML += '<select id="wheel-options">'
+    optionsHTML += '<option value="0">Select a wheel style</option>'
 
     // Generate a new array of HTML strings using the Array.map() method
-    const divStringArray = wheels.map(
+    const arrayOfOptions = wheels.map(
         (wheel) => {
-            return `<div>
-                <select id="wheel-options">
-                    <option value="0">Select a wheel style</option>
-                    <option value="${wheel.id}"> ${wheel.option}</option>
-                </select>
-            </div>`
+            return `<option value="${wheel.id}"> ${wheel.option}</option>`
         }
     )
 
-    // console.log(divStringArray)
+    // console.log(arrayOfOptions)
 
-    optionsHTML += divStringArray.join("")
+    optionsHTML += arrayOfOptions.join("")
+    optionsHTML += "</select>"
 
     return optionsHTML
 }
