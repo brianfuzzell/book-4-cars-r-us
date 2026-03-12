@@ -28,6 +28,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .options {
+    max-width: 400px;
     margin: 0 2rem;
     padding: 1rem;
     border: 2px dotted rgb(66, 134, 190);
