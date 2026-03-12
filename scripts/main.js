@@ -2,7 +2,7 @@ import { interiorOptions } from "./interiorOptions.js"
 import { paintOptions } from "./paintOptions.js"
 import { technologyOptions } from "./technologyOptions.js"
 import { wheelOptions } from "./wheelsOptions.js"
-// import submission button
+import { submissionButton } from "./submissionButton.js"
 // import orders
 
 const container = document.querySelector("#container")
@@ -12,7 +12,7 @@ const render = async () => {
     const paintOptionsHTML = await paintOptions()
     const technologyOptionsHTML = await technologyOptions()
     const wheelOptionsHTML = await wheelOptions()
-    // submission button
+    const buttonHTML = submissionButton()
     // orders
 
     const composedHTML = `

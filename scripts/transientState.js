@@ -26,12 +26,23 @@ export const setWheelChoice = (chosenWheel) => {
 }
 
 // Write and export the placeOrder function
-
+export const placeOrder = async () => {
     /*
         Add the required keys to the object below that are
         needed for a POST operation.
     */
+    const postOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(transientState)
+    }
 
     // Send the transient state data to the API
+    const response = await fetch("http://localhost:8088/orders", postOptions)
 
     // Dispatch a custom event when the submission is complete
+}
+
+    
