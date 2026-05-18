@@ -8,7 +8,7 @@ const handleInteriorSelection = (changeEvent) => {
 
 export const interiorOptions = async () => {
     // Fetch interiors from the API
-    const response = await fetch("http://localhost:8088/interiors")
+    const response = await fetch("https://localhost:7204/interiors")
     const interiors = await response.json()
 
     // console.log(interiors)

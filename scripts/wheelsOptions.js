@@ -9,7 +9,7 @@ const handleWheelSelection = (changeEvent) => {
 
 export const wheelOptions = async () => {
     // Fetch wheels from the API
-    const response = await fetch("http://localhost:8088/wheels")
+    const response = await fetch("https://localhost:7204/wheels")
     const wheels = await response.json()
 
     // console.log(wheels)

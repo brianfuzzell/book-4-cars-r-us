@@ -8,7 +8,7 @@ const handleTechnologySelection = (changeEvent) => {
 
 export const technologyOptions = async () => {
     // Fetch technologies from the API
-    const response = await fetch("http://localhost:8088/technologies")
+    const response = await fetch("https://localhost:7204/technologies")
     const technologies = await response.json()
 
     // console.log(technologies)

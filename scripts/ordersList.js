@@ -1,6 +1,6 @@
 export const ordersList = async () => {
     // Fetch orders from the API
-    const response = await fetch("http://localhost:8088/orders?_expand=paint&_expand=interior&_expand=technology&_expand=wheel")
+    const response = await fetch("https://localhost:7204/orders")
     const orders = await response.json()
 
     // Generate the HTML representation for each order
