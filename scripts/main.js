@@ -55,4 +55,8 @@ document.addEventListener("newOrderSubmitted", CustomEvent => {
     render()
 })
 
+document.addEventListener("stateChanged", CustomEvent => {
+    render()
+})
+
 render()

@@ -1,8 +1,7 @@
-import { placeOrder } from "./transientState.js"
+import { placeOrder, completeOrder } from "./transientState.js"
 
 const handleOrderSubmission = (clickEvent) => {
     if (clickEvent.target.id === "submission-button") {
-        // console.log("Place Car Order button clicked")
         placeOrder()
     }
 }
@@ -12,3 +11,10 @@ export const submissionButton = () => {
 
     return `<button id="submission-button">Place Car Order</button>`
 }
+
+document.addEventListener("click", (event) => {
+    const { name, id } = event.target;
+    if (name === "complete") {
+        completeOrder(id);
+    }
+});
