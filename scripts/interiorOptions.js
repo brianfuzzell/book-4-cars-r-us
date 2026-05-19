@@ -24,7 +24,7 @@ export const interiorOptions = async () => {
     // Generate a new array of HTML strings using the Array.map() method 
     const arrayOfOptions = interiors.map(
         (interior) => {
-            return `<option value="${interior.id}"> ${interior.type}</option>`
+            return `<option value="${interior.id}"> ${interior.material}</option>`
         }
     )  
     
