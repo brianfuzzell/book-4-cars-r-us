@@ -11,7 +11,7 @@ export const ordersList = async () => {
 
     const ordersHTML = orders.map(
         (order) => {
-            const orderPrice = order.paint.price + order.interior.price + order.technology.price + order.wheel.price
+            const orderPrice = order.paintColor.price + order.interior.price + order.technology.price + order.wheels.price
             // Trying out the toLocalString() method to format the order price
             const formattedPrice = orderPrice.toLocaleString("en-US", {
                 style: "currency",
@@ -20,7 +20,7 @@ export const ordersList = async () => {
 
             return `
                 <section class="order-submission-container">
-                    <p>${order.paint.color} car with ${order.wheel.option} wheels, ${order.interior.type} interior, and the ${order.technology.package} for a total cost of ${formattedPrice}</p>
+                    <p>${order.paintColor.color} car with ${order.wheels.style} wheels, ${order.interior.material} interior, and the ${order.technology.package} for a total cost of ${formattedPrice}</p>
                 </section>
             `
         }
