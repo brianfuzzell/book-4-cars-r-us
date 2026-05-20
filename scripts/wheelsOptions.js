@@ -25,7 +25,7 @@ export const wheelOptions = async () => {
     // Generate a new array of HTML strings using the Array.map() method
     const arrayOfOptions = wheels.map(
         (wheel) => {
-            return `<option value="${wheel.id}"> ${wheel.option}</option>`
+            return `<option value="${wheel.id}"> ${wheel.style}</option>`
         }
     )
 
